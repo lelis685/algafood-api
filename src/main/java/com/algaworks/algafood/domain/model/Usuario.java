@@ -38,6 +38,4 @@ public class Usuario {
             inverseJoinColumns = @JoinColumn(name="grupo_id"))
     private List<Grupo> grupos = new ArrayList<>();
 
-
-
 }
