@@ -1,13 +1,9 @@
 package com.algaworks.algafood.api.controller;
 
 import java.lang.reflect.Field;
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-
-import static com.algaworks.algafood.infrastructure.repository.spec.RestauranteSpecs.comFreteGratis;
-import static com.algaworks.algafood.infrastructure.repository.spec.RestauranteSpecs.comNomeSemelhante;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +28,10 @@ public class RestauranteController {
 	@Autowired
 	private CadastroRestauranteService cadastroRestaurante;
 
+	@GetMapping("/primeiro")
+	public Optional<Restaurante> buscarPrimeiro() {
+		return restauranteRepository.buscarPrimeiro();
+	}
 
 	@GetMapping("/frete/gratis")
 	public List<Restaurante> buscarFreteGratis(@RequestParam(required = false) String nome) {
