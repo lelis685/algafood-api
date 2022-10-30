@@ -27,4 +27,6 @@ public class Cozinha {
     @OneToMany(mappedBy = "cozinha")
     List<Restaurante> restaurantes = new ArrayList<>();
 
+
+
 }
