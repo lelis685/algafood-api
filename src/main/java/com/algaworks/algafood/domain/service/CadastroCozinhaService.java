@@ -12,6 +12,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class CadastroCozinhaService {
 
+    public static final String MSG_COZINHA_NAO_ENCONTRADA = "Nao existe um cadastro de cozinha com codigo %d.";
+    public static final String MSG_COZINHA_EM_USO = "Cozinha de codigo %d nao pode ser removida, pois esta em uso.";
+
     @Autowired
     private CozinhaRepository cozinhaRepository;
 
@@ -25,11 +28,17 @@ public class CadastroCozinhaService {
             cozinhaRepository.deleteById(id);
         } catch (EmptyResultDataAccessException emptyResultDataAccessException) {
             throw new EntidadeNaoEncontradaException(
-                    String.format("Nao existe um cadastro de cozinha com codigo %d.", id));
+                    String.format(MSG_COZINHA_NAO_ENCONTRADA, id));
         } catch (DataIntegrityViolationException dataIntegrityViolationException) {
             throw new EntidadeEmUsoException(
-                    String.format("Cozinha de codigo %d nao pode ser removida, pois esta em uso.", id));
+                    String.format(MSG_COZINHA_EM_USO, id));
         }
+    }
+
+    public Cozinha buscarOuFalhar(Long cozinhaId) {
+        return cozinhaRepository.findById(cozinhaId)
+                .orElseThrow(() -> new EntidadeNaoEncontradaException(
+                        String.format(MSG_COZINHA_NAO_ENCONTRADA, cozinhaId)));
     }
 
 
