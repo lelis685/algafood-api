@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/restaurantes")
@@ -35,6 +36,16 @@ public class RestauranteController {
 	@GetMapping("/{restauranteId}")
 	public Restaurante buscar(@PathVariable Long restauranteId) {
 		return cadastroRestaurante.buscarOuFalhar(restauranteId);
+	}
+
+	@GetMapping("/primeiro")
+	public Optional<Restaurante> buscarPrimeiro() {
+		return restauranteRepository.buscarPrimeiro();
+	}
+
+	@GetMapping("/frete-gratis")
+	public List<Restaurante> buscarFreteGratisComNomeSemelhante(@RequestParam String nome) {
+		return restauranteRepository.findComFreteGratis(nome);
 	}
 	
 	@PostMapping
