@@ -1,0 +1,592 @@
+{
+	"info": {
+		"_postman_id": "f19f5508-39c8-46bd-91c9-8815635b1b26",
+		"name": "AlgaFood API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3744572"
+	},
+	"item": [
+		{
+			"name": "Cozinhas",
+			"item": [
+				{
+					"name": "Cozinhas - Listar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/cozinhas",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"cozinhas"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Indiana",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cozinhas - Buscar ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/cozinhas/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"cozinhas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cozinhas - Salvar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Brasileira Batata\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/cozinhas",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"cozinhas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cozinhas - Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Brasileira Batata\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/cozinhas/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"cozinhas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cozinhas - Remover",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/cozinhas/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"cozinhas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurantes",
+			"item": [
+				{
+					"name": "Listar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/restaurantes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"restaurantes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Frete Gratis",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/restaurantes/frete/gratis?nome=a",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"restaurantes",
+								"frete",
+								"gratis"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Primeiro",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/restaurantes/primeiro",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"restaurantes",
+								"primeiro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/restaurantes/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"restaurantes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Salvar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": 1,\r\n        \"nome\": \"Thai Gourmet\",\r\n        \"taxaFrete\": 10.00,\r\n        \"cozinha\": {\r\n            \"id\": 1,\r\n            \"nome\": \"Tailandesa\"\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/restaurantes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"restaurantes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Brasileira Batata\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/restaurantes/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"restaurantes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Parcial",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n\r\n        \"taxaFrete\": 0.00\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/restaurantes/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"restaurantes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/cozinhas/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"cozinhas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Estados",
+			"item": [
+				{
+					"name": "Listar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/estados",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/estados/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"estados",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Salvar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Brasileira Batata\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/estados",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Brasileira Batata\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/estados/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"estados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/estados/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"estados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cidades",
+			"item": [
+				{
+					"name": "Listar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/cidades",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"cidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/cidades/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"cidades",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Salvar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Brasileira Batata\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/cidades",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"cidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/pdf",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Belo Horizonte\",\r\n    \"estado\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/cidades/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"cidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/cidades/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"cidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
