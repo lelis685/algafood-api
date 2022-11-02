@@ -2,6 +2,8 @@ package com.algaworks.algafood.domain.model;
 
 import com.algaworks.algafood.core.validation.Groups;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
