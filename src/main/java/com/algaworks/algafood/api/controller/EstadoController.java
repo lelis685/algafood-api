@@ -2,6 +2,7 @@ package com.algaworks.algafood.api.controller;
 
 import java.util.List;
 
+import com.algaworks.algafood.api.assembler.RestauranteModelAssembler;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,6 +31,7 @@ public class EstadoController {
 	
 	@Autowired
 	private CadastroEstadoService cadastroEstado;
+
 	
 	@GetMapping
 	public List<Estado> listar() {
