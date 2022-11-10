@@ -1,6 +1,5 @@
 package com.algaworks.algafood.api.model;
 
-import com.algaworks.algafood.api.model.mixin.CozinhaMixin;
 import com.algaworks.algafood.domain.model.Cozinha;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -23,5 +22,6 @@ public class RestauranteModel {
     private String nome;
     private BigDecimal taxaFrete;
     private CozinhaModel cozinha;
+    private Boolean ativo;
 
 }
