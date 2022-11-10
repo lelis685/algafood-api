@@ -11,6 +11,19 @@
 			"item": [
 				{
 					"name": "Cozinhas - Listar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {}
 					},
@@ -44,6 +57,19 @@
 				},
 				{
 					"name": "Cozinhas - Buscar ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -62,6 +88,19 @@
 				},
 				{
 					"name": "Cozinhas - Salvar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -88,6 +127,19 @@
 				},
 				{
 					"name": "Cozinhas - Atualizar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -115,6 +167,30 @@
 				},
 				{
 					"name": "Cozinhas - Remover",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 409\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.status).to.eql(409);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -137,7 +213,20 @@
 			"name": "Restaurantes",
 			"item": [
 				{
-					"name": "Listar",
+					"name": "Restaurantes Listar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {}
 					},
@@ -163,7 +252,102 @@
 					"response": []
 				},
 				{
-					"name": "Listar Frete Gratis",
+					"name": "Restaurantes Ativar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"  pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/restaurantes/1/ativo",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"restaurantes",
+								"1",
+								"ativo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restaurantes Inativar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"  pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/restaurantes/1/ativo",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"restaurantes",
+								"1",
+								"ativo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restaurantes Listar Frete Gratis",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {}
 					},
@@ -177,14 +361,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}/restaurantes/frete/gratis?nome=a",
+							"raw": "{{host}}/restaurantes/frete-gratis?nome=a",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"restaurantes",
-								"frete",
-								"gratis"
+								"frete-gratis"
 							],
 							"query": [
 								{
@@ -197,7 +380,20 @@
 					"response": []
 				},
 				{
-					"name": "Listar Primeiro",
+					"name": "Restaurantes Listar Primeiro",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {}
 					},
@@ -224,31 +420,57 @@
 					"response": []
 				},
 				{
-					"name": "Buscar ID",
+					"name": "Restaurantes Buscar ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/restaurantes/2",
+							"raw": "{{host}}/restaurantes/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"restaurantes",
-								"2"
+								"1"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Salvar",
+					"name": "Restaurantes Salvar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": " {\r\n        \"id\": 1,\r\n        \"nome\": \"Thai Gourmet\",\r\n        \"taxaFrete\": 10.00,\r\n        \"cozinha\": {\r\n            \"id\": 1,\r\n            \"nome\": \"Tailandesa\"\r\n        }\r\n    }",
+							"raw": " {\r\n        \"nome\": \"Thai Gourmet\",\r\n        \"taxaFrete\": 10.00,\r\n        \"cozinha\": {\r\n            \"id\": 1        \r\n            }\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -268,13 +490,26 @@
 					"response": []
 				},
 				{
-					"name": "Atualizar",
+					"name": "Restaurantes Atualizar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Brasileira Batata\"\r\n}",
+							"raw": "{\r\n    \"nome\": \"Thai Gourmet\",\r\n    \"taxaFrete\": 10.00,\r\n    \"cozinha\": {\r\n        \"id\": 1\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -288,51 +523,6 @@
 							],
 							"path": [
 								"restaurantes",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Atualizar Parcial",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "    {\r\n\r\n        \"taxaFrete\": 0.00\r\n    }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{host}}/restaurantes/1",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"restaurantes",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Remover",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{host}}/cozinhas/1",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"cozinhas",
 								"1"
 							]
 						}
@@ -345,7 +535,20 @@
 			"name": "Estados",
 			"item": [
 				{
-					"name": "Listar",
+					"name": "Estados Listar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {}
 					},
@@ -371,7 +574,20 @@
 					"response": []
 				},
 				{
-					"name": "Buscar ID",
+					"name": "Estados Buscar ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -389,7 +605,20 @@
 					"response": []
 				},
 				{
-					"name": "Salvar",
+					"name": "Estados Salvar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -415,7 +644,7 @@
 					"response": []
 				},
 				{
-					"name": "Atualizar",
+					"name": "Estados Atualizar",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -442,7 +671,20 @@
 					"response": []
 				},
 				{
-					"name": "Remover",
+					"name": "Estados Remover",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 409\", function () {\r",
+									"  pm.response.to.have.status(409);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -465,7 +707,20 @@
 			"name": "Cidades",
 			"item": [
 				{
-					"name": "Listar",
+					"name": "Cidades Listar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {}
 					},
@@ -491,31 +746,57 @@
 					"response": []
 				},
 				{
-					"name": "Buscar ID",
+					"name": "Cidades Buscar ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/cidades/2",
+							"raw": "{{host}}/cidades/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"cidades",
-								"2"
+								"1"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Salvar",
+					"name": "Cidades Salvar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Brasileira Batata\"\r\n}",
+							"raw": "{\r\n    \"nome\": \"Brasileira Batata\",\r\n    \"estado\": {\r\n        \"id\": 1\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -535,7 +816,20 @@
 					"response": []
 				},
 				{
-					"name": "Atualizar",
+					"name": "Cidades Atualizar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -569,7 +863,20 @@
 					"response": []
 				},
 				{
-					"name": "Remover",
+					"name": "Cidades Remover",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(409);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -580,6 +887,209 @@
 							],
 							"path": [
 								"cidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Formas Pagamento",
+			"item": [
+				{
+					"name": "Forma Pagamento - Listar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/formas-pagamento",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"formas-pagamento"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Indiana",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forma Pagamento - Buscar ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/formas-pagamento/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"formas-pagamento",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forma Pagamento - Salvar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"Cartão de batata\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/formas-pagamento",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"formas-pagamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forma Pagamento - Atualizar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"Cartão de jumento\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/formas-pagamento/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"formas-pagamento",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forma Pagamento - Remover",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 409\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.status).to.eql(409);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/formas-pagamento/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"formas-pagamento",
 								"1"
 							]
 						}
