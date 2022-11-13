@@ -213,6 +213,455 @@
 			"name": "Restaurantes",
 			"item": [
 				{
+					"name": "Produtos",
+					"item": [
+						{
+							"name": "Restaurantes Listar Produtos",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/restaurantes/1/produtos",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"restaurantes",
+										"1",
+										"produtos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Restaurantes Buscar Produto por ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/restaurantes/1/produtos/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"restaurantes",
+										"1",
+										"produtos",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Restaurantes Cadastrar Produto",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Porco com molho agridoce 222\",\r\n    \"descricao\": \"Deliciosa carne suína ao molho especial\",\r\n    \"preco\": 78.90,\r\n    \"ativo\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/restaurantes/1/produtos",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"restaurantes",
+										"1",
+										"produtos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Restaurantes Atualizar Produto",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Porco com molho agridoce 222\",\r\n    \"descricao\": \"Deliciosa carne suína ao molho especial\",\r\n    \"preco\": 78.90,\r\n    \"ativo\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/restaurantes/1/produtos/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"restaurantes",
+										"1",
+										"produtos",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Formas de Pagamento",
+					"item": [
+						{
+							"name": "Restaurantes Listar Formas Pagamentos",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/restaurantes/1/formas-pagamento",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"restaurantes",
+										"1",
+										"formas-pagamento"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Restaurantes Desassociar Forma Pagamento",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 204\", function () {\r",
+											"  pm.response.to.have.status(204);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/restaurantes/1/formas-pagamento/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"restaurantes",
+										"1",
+										"formas-pagamento",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Restaurantes Associar Forma Pagamento",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(204);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/restaurantes/1/formas-pagamento/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"restaurantes",
+										"1",
+										"formas-pagamento",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Responsaveis",
+					"item": [
+						{
+							"name": "Restaurantes Listar Responsaveis",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/restaurantes/1/responsaveis",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"restaurantes",
+										"1",
+										"responsaveis"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Restaurantes Desassociar Responsavel",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 204\", function () {\r",
+											"  pm.response.to.have.status(204);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/restaurantes/1/responsaveis/5",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"restaurantes",
+										"1",
+										"responsaveis",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Restaurantes Associar Responsavel",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(204);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/restaurantes/1/responsaveis/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"restaurantes",
+										"1",
+										"responsaveis",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "Restaurantes Listar",
 					"event": [
 						{
@@ -451,6 +900,70 @@
 					"response": []
 				},
 				{
+					"name": "Restaurantes Abrir",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/restaurantes/1/abertura",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"restaurantes",
+								"1",
+								"abertura"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restaurantes Fechar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/restaurantes/1/fechamento",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"restaurantes",
+								"1",
+								"fechamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Restaurantes Salvar",
 					"event": [
 						{
@@ -470,7 +983,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": " {\r\n        \"nome\": \"Thai Gourmet\",\r\n        \"taxaFrete\": 10.00,\r\n        \"cozinha\": {\r\n            \"id\": 1        \r\n            }\r\n    }",
+							"raw": "{\r\n    \"nome\": \"Thai Gourmet\",\r\n    \"taxaFrete\": 10.00,\r\n    \"cozinha\": {\r\n        \"id\": 1\r\n    },\r\n       \"endereco\": {\r\n            \"cep\": \"38400-999\",\r\n            \"logradouro\": \"Rua Afonso Pinheiro\",\r\n            \"numero\": \"1000\",\r\n            \"complemento\": null,\r\n            \"bairro\": \"Centro\",\r\n            \"cidade\": {\r\n                \"id\": 1\r\n        }\r\n    }\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -509,7 +1022,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Thai Gourmet\",\r\n    \"taxaFrete\": 10.00,\r\n    \"cozinha\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"raw": "{\r\n    \"nome\": \"Thai Gourmet\",\r\n    \"taxaFrete\": 10.00,\r\n    \"cozinha\": {\r\n        \"id\": 1\r\n    },\r\n       \"endereco\": {\r\n            \"cep\": \"38400-999\",\r\n            \"logradouro\": \"Rua Afonso Pinheiro\",\r\n            \"numero\": \"1000\",\r\n            \"complemento\": null,\r\n            \"bairro\": \"Centro\",\r\n            \"cidade\": {\r\n                \"id\": 2\r\n            }\r\n        }\r\n    }\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -696,6 +1209,566 @@
 							"path": [
 								"estados",
 								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Grupos",
+			"item": [
+				{
+					"name": "Permissoes",
+					"item": [
+						{
+							"name": "Grupos Listar Permissoes",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/grupos/1/permissoes",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"grupos",
+										"1",
+										"permissoes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Grupos Associar Permissao",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(204);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/grupos/1/permissoes/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"grupos",
+										"1",
+										"permissoes",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Grupos Desassociar Permissao",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(204);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/grupos/1/permissoes/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"grupos",
+										"1",
+										"permissoes",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Grupos Listar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/grupos",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"grupos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Grupos Buscar ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/grupos/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"grupos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Grupos Salvar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Brasileira Batata\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/grupos",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"grupos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Grupos Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Brasileira Batata\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/grupos/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"grupos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Grupos Remover",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"  pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/grupos/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"grupos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Grupos",
+					"item": [
+						{
+							"name": "Usuarios Listar Grupos",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/usuarios/2/grupos",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"usuarios",
+										"2",
+										"grupos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Usuarios Associar Grupo",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(204);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/usuarios/2/grupos/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"usuarios",
+										"2",
+										"grupos",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Usuarios Desassociar Grupo",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(204);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/usuarios/2/grupos/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"usuarios",
+										"2",
+										"grupos",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Usuarios Listar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/usuarios",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuarios Buscar ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/usuarios/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"usuarios",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuarios Salvar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Maria Joaquina\",\r\n    \"email\": \"maria22.vnd@algafood.com\",\r\n    \"senha\": 1225\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/usuarios",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuarios Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Maria Joaquina\",\r\n    \"email\": \"maria.vnd@algafood.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/usuarios/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"usuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuarios Atualizar Senha",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"  pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"senhaAtual\": 1225,\r\n \"novaSenha\": 123\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/usuarios/5/senha",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"usuarios",
+								"5",
+								"senha"
 							]
 						}
 					},
