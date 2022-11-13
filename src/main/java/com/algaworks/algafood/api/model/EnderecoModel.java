@@ -12,7 +12,6 @@ import javax.persistence.ManyToOne;
 @Getter
 public class EnderecoModel {
 
-
     private String cep;
     private String logradouro;
     private String numero;
