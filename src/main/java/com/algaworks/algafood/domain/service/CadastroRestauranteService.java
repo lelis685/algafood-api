@@ -8,6 +8,7 @@ import com.algaworks.algafood.domain.exception.RestauranteNaoEncontradoException
 import com.algaworks.algafood.domain.repository.RestauranteRepository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 public class CadastroRestauranteService {
@@ -29,12 +30,6 @@ public class CadastroRestauranteService {
 
 
 	@Transactional
-	public void ativar(Long restauranteId){
-		Restaurante restauranteAtual = buscarOuFalhar(restauranteId);
-		restauranteAtual.ativar();
-	}
-
-	@Transactional
 	public void desassociarFormaPagamento(Long restauranteId, Long formaPagamentoId){
 		Restaurante restaurante = buscarOuFalhar(restauranteId);
 		FormaPagamento formaPagamento = cadastroFormaPagamento.buscarOuFalhar(formaPagamentoId);
@@ -48,6 +43,21 @@ public class CadastroRestauranteService {
 		restaurante.adicionarFormaPagamento(formaPagamento);
 	}
 
+	@Transactional
+	public void ativar(List<Long> restauranteIds){
+		restauranteIds.forEach(this::ativar);
+	}
+
+	@Transactional
+	public void inativar(List<Long> restauranteIds){
+		restauranteIds.forEach(this::inativar);
+	}
+
+	@Transactional
+	public void ativar(Long restauranteId){
+		Restaurante restauranteAtual = buscarOuFalhar(restauranteId);
+		restauranteAtual.ativar();
+	}
 
 	@Transactional
 	public void inativar(Long restauranteId){
