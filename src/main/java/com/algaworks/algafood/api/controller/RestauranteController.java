@@ -36,16 +36,12 @@ public class RestauranteController {
 	@Autowired
 	private RestauranteInputDisassembler restauranteInputDisassembler;
 
+	@JsonView(RestauranteView.Resumo.class)
 	@GetMapping
 	public List<RestauranteModel> listar() {
 		return restauranteModelAssembler.toCollectionModel(restauranteRepository.findAll());
 	}
 
-	@JsonView(RestauranteView.Resumo.class)
-	@GetMapping(params = "projecao=resumo")
-	public List<RestauranteModel> listarResumido() {
-		return listar();
-	}
 
 	@JsonView(RestauranteView.ApenasNome.class)
 	@GetMapping(params = "projecao=apenas-nome")
