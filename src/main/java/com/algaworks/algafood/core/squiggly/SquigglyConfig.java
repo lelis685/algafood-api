@@ -14,7 +14,7 @@ public class SquigglyConfig {
 
     @Bean
     public AbstractFilterRegistrationBean<SquigglyRequestFilter> squigglyRequestFilter(ObjectMapper mappers){
-        Squiggly.init(mappers, new RequestSquigglyContextProvider());
+        Squiggly.init(mappers, new RequestSquigglyContextProvider("campos", null));
 
         var filterRegistration = new FilterRegistrationBean<SquigglyRequestFilter>();
         filterRegistration.setFilter(new SquigglyRequestFilter());
