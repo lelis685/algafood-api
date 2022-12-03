@@ -49,6 +49,21 @@
 									"key": "nome",
 									"value": "Indiana",
 									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "id",
+									"disabled": true
 								}
 							]
 						}
@@ -251,6 +266,13 @@
 										"restaurantes",
 										"1",
 										"produtos"
+									],
+									"query": [
+										{
+											"key": "incluirInativos",
+											"value": "true",
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -695,6 +717,104 @@
 							],
 							"path": [
 								"restaurantes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restaurantes Ativar Em Massa",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"  pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[1,2,3]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/restaurantes/ativacoes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"restaurantes",
+								"ativacoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restaurantes Inativar Em Massa",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"  pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[1,2]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/restaurantes/ativacoes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"restaurantes",
+								"ativacoes"
 							]
 						}
 					},
@@ -1466,7 +1586,7 @@
 							"script": {
 								"exec": [
 									"pm.test(\"Status code is 204\", function () {\r",
-									"  pm.response.to.have.status(204);\r",
+									"  pm.response.to.have.status(409);\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -1761,13 +1881,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/usuarios/5/senha",
+							"raw": "{{host}}/usuarios/6/senha",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"usuarios",
-								"5",
+								"6",
 								"senha"
 							]
 						}
@@ -1972,7 +2092,7 @@
 			"name": "Formas Pagamento",
 			"item": [
 				{
-					"name": "Forma Pagamento - Listar",
+					"name": "Forma Pagamento - Listar Copy",
 					"event": [
 						{
 							"listen": "test",
@@ -2164,6 +2284,318 @@
 							"path": [
 								"formas-pagamento",
 								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "Pedidos - Buscar ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/pedidos/f9981ca4-5a5e-4da3-af04-933861df3e55",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"pedidos",
+								"f9981ca4-5a5e-4da3-af04-933861df3e55"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pedidos - Confirmar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/pedidos/f9981ca4-5a5e-4da3-af04-933861df3e55/confirmacao",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"pedidos",
+								"f9981ca4-5a5e-4da3-af04-933861df3e55",
+								"confirmacao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pedidos - Entregar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/pedidos/f9981ca4-5a5e-4da3-af04-933861df3e55/entrega",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"pedidos",
+								"f9981ca4-5a5e-4da3-af04-933861df3e55",
+								"entrega"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pedidos - Cancelar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/pedidos/d178b637-a785-4768-a3cb-aa1ce5a8cdab/cancelamento",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"pedidos",
+								"d178b637-a785-4768-a3cb-aa1ce5a8cdab",
+								"cancelamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pedidos - Salvar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"restaurante\": {\r\n        \"id\": 1\r\n    },\r\n    \"formaPagamento\": {\r\n        \"id\": 1\r\n    },\r\n    \"enderecoEntrega\": {\r\n        \"cep\": \"38400-000\",\r\n        \"logradouro\": \"Rua Floriano Peixoto\",\r\n        \"numero\": \"500\",\r\n        \"complemento\": \"Apto 801\",\r\n        \"bairro\": \"Brasil\",\r\n        \"cidade\": {\r\n            \"id\": 1\r\n        }\r\n    },\r\n    \"itens\": [\r\n        {\r\n            \"produtoId\": 1,\r\n            \"quantidade\": 1,\r\n            \"observacao\": null\r\n        },\r\n        {\r\n            \"produtoId\": 2,\r\n            \"quantidade\": 2,\r\n            \"observacao\": \"Menos picante, por favor\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/pedidos",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pedidos - Listar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/pedidos?clienteId=1&restauranteId=4&dataCriacaoFim=2022-09-30T10:00:00Z",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"pedidos"
+							],
+							"query": [
+								{
+									"key": "clienteId",
+									"value": "1"
+								},
+								{
+									"key": "restauranteId",
+									"value": "4"
+								},
+								{
+									"key": "dataCriacaoInicio",
+									"value": "2022-11-30T10:00:00Z",
+									"disabled": true
+								},
+								{
+									"key": "dataCriacaoFim",
+									"value": "2022-09-30T10:00:00Z"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Estatisticas",
+			"item": [
+				{
+					"name": "Consulta Vendas Diarias",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/pdf,application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/estatisticas/vendas-diarias",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"estatisticas",
+								"vendas-diarias"
+							],
+							"query": [
+								{
+									"key": "clienteId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "restauranteId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "dataCriacaoInicio",
+									"value": "2022-10-30T10:00:00Z",
+									"disabled": true
+								},
+								{
+									"key": "dataCriacaoFim",
+									"value": "2022-11-30T10:00:00Z",
+									"disabled": true
+								},
+								{
+									"key": "timeOffset",
+									"value": "-03:00",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
 							]
 						}
 					},
