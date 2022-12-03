@@ -84,7 +84,17 @@ public class PedidoController {
 
 
     private Pageable traduzirPageable(Pageable apiPageable){
-        var mapeamento = Map.of("nomeCliente", "cliente.nome");
+        var mapeamento = Map.of(
+                "codigo", "codigo",
+                "subtotal", "subtotal",
+                "taxaFrete", "taxaFrete",
+                "valorTotal", "valorTotal",
+                "dataCriacao", "dataCriacao",
+                "restaurante.nome", "restaurante.nome",
+                "restaurante.id", "restaurante.id",
+                "cliente.id", "cliente.id",
+                "cliente.nome", "cliente.nome"
+        );
         return PageableTranslator.translate(apiPageable, mapeamento);
     }
 
