@@ -1,5 +1,6 @@
 package com.algaworks.algafood.api.model.input;
 
+import com.algaworks.algafood.core.validation.FileContentType;
 import com.algaworks.algafood.core.validation.FileSize;
 import lombok.Getter;
 import lombok.Setter;
