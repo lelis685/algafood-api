@@ -27,23 +27,13 @@ public class SmtpEnvioEmailService implements EnvioEmailService {
 
     @Override
     public void enviar(Mensagem mensagem) {
-
         try {
-            String corpo = processarTemplate(mensagem);
-
-            MimeMessage mimeMessage = mailSender.createMimeMessage();
-
-            MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "UTF-8");
-            helper.setFrom(emailProperties.getRemetente());
-            helper.setTo(mensagem.getDestinatarios().toArray(new String[0]));
-            helper.setSubject(mensagem.getAssunto());
-            helper.setText(corpo, true);
+            MimeMessage mimeMessage = criarMimeMessage(mensagem);
 
             mailSender.send(mimeMessage);
         } catch (Exception e) {
-            throw new EmailException("Nao foi possivel enviar email", e);
+            throw new EmailException("Não foi possível enviar e-mail", e);
         }
-
     }
 
     protected String processarTemplate(Mensagem mensagem){
@@ -54,4 +44,19 @@ public class SmtpEnvioEmailService implements EnvioEmailService {
             throw new EmailException("Nao foi possivel montar o template do e-mail", e);
         }
     }
+
+    protected MimeMessage criarMimeMessage(Mensagem mensagem) throws MessagingException {
+        String corpo = processarTemplate(mensagem);
+
+        MimeMessage mimeMessage = mailSender.createMimeMessage();
+
+        MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "UTF-8");
+        helper.setFrom(emailProperties.getRemetente());
+        helper.setTo(mensagem.getDestinatarios().toArray(new String[0]));
+        helper.setSubject(mensagem.getAssunto());
+        helper.setText(corpo, true);
+
+        return mimeMessage;
+    }
+
 }
