@@ -40,6 +40,7 @@ public class GrupoController implements GrupoControllerOpenApi {
 	@Autowired
 	private GrupoInputDisassembler grupoInputDisassembler;
 
+	@Override
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<GrupoModel> listar() {
 		List<Grupo> todosGrupos = grupoRepository.findAll();
@@ -47,6 +48,7 @@ public class GrupoController implements GrupoControllerOpenApi {
 		return grupoModelAssembler.toCollectionModel(todosGrupos);
 	}
 
+	@Override
 	@GetMapping(path = "/{grupoId}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public GrupoModel buscar(@PathVariable Long grupoId) {
 		Grupo grupo = cadastroGrupo.buscarOuFalhar(grupoId);
@@ -54,7 +56,8 @@ public class GrupoController implements GrupoControllerOpenApi {
 		return grupoModelAssembler.toModel(grupo);
 	}
 
-	@PostMapping(MediaType.APPLICATION_JSON_VALUE)
+	@Override
+	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.CREATED)
 	public GrupoModel adicionar(@RequestBody @Valid GrupoInput grupoInput) {
 		Grupo grupo = grupoInputDisassembler.toDomainObject(grupoInput);
@@ -64,9 +67,10 @@ public class GrupoController implements GrupoControllerOpenApi {
 		return grupoModelAssembler.toModel(grupo);
 	}
 
+	@Override
 	@PutMapping(path = "/{grupoId}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public GrupoModel atualizar(@PathVariable Long grupoId,
-								@RequestBody @Valid GrupoInput grupoInput) {
+	                            @RequestBody @Valid GrupoInput grupoInput) {
 		Grupo grupoAtual = cadastroGrupo.buscarOuFalhar(grupoId);
 
 		grupoInputDisassembler.copyToDomainObject(grupoInput, grupoAtual);
@@ -76,6 +80,7 @@ public class GrupoController implements GrupoControllerOpenApi {
 		return grupoModelAssembler.toModel(grupoAtual);
 	}
 
+	@Override
 	@DeleteMapping("/{grupoId}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void remover(@PathVariable Long grupoId) {

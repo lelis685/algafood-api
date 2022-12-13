@@ -1,19 +1,17 @@
 package com.algaworks.algafood.api.model.input;
 
+import javax.validation.constraints.NotBlank;
+
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
-@Getter
 @Setter
+@Getter
 public class FormaPagamentoInput {
 
-    @ApiModelProperty(example = "Cartão de crédito", required = true)
-    @NotBlank
-    private String descricao;
-
+	@ApiModelProperty(example = "Cartão de crédito", required = true)
+	@NotBlank
+	private String descricao;
+	
 }

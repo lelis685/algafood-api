@@ -7,7 +7,8 @@ import lombok.Setter;
 @Getter
 public class PermissaoModel {
 
-    private Long id;
-    private String nome;
-    private String descricao;	
+	private Long id;
+	private String nome;
+	private String descricao;
+	
 }
