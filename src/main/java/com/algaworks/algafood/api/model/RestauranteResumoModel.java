@@ -10,8 +10,8 @@ public class RestauranteResumoModel {
 
 	@ApiModelProperty(example = "1")
 	private Long id;
-	
+
 	@ApiModelProperty(example = "Thai Gourmet")
 	private String nome;
-	
+
 }

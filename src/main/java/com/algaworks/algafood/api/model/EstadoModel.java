@@ -10,8 +10,8 @@ public class EstadoModel {
 
 	@ApiModelProperty(example = "1")
 	private Long id;
-	
+
 	@ApiModelProperty(example = "Minas Gerais")
 	private String nome;
-	
+
 }

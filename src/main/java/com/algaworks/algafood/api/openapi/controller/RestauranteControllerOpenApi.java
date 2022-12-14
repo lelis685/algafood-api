@@ -3,15 +3,7 @@ package com.algaworks.algafood.api.openapi.controller;
 import com.algaworks.algafood.api.exceptionhandler.Problem;
 import com.algaworks.algafood.api.model.RestauranteModel;
 import com.algaworks.algafood.api.model.input.RestauranteInput;
-
-import com.fasterxml.jackson.annotation.JsonView;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.*;
 
 import java.util.List;
 
@@ -24,6 +16,9 @@ public interface RestauranteControllerOpenApi {
 					name = "projecao", paramType = "query", type = "string")
 	})
 	List<RestauranteModel> listar();
+
+	@ApiOperation(value = "Lista restaurantes", hidden = true)
+	List<RestauranteModel> listarApenasNomes();
 
 	@ApiOperation("Busca um restaurante por ID")
 	@ApiResponses({

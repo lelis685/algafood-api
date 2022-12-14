@@ -10,8 +10,8 @@ public class CozinhaModel {
 
 	@ApiModelProperty(example = "1")
 	private Long id;
-	
+
 	@ApiModelProperty(example = "Brasileira")
 	private String nome;
-	
+
 }

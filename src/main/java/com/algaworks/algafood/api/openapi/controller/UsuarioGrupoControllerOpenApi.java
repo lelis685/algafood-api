@@ -10,38 +10,38 @@ import io.swagger.annotations.ApiResponses;
 
 import java.util.List;
 
-@Api(tags = "Usuarios")
+@Api(tags = "Usuários")
 public interface UsuarioGrupoControllerOpenApi {
 
-	@ApiOperation("Lista os grupos associados a um usuario")
+	@ApiOperation("Lista os grupos associados a um usuário")
 	@ApiResponses({
-			@ApiResponse(code = 404, message = "Usuario nao encontrado", response = Problem.class)
+			@ApiResponse(code = 404, message = "Usuário não encontrado", response = Problem.class)
 	})
 	List<GrupoModel> listar(
-			@ApiParam(value = "ID do usuario", example = "1", required = true)
+			@ApiParam(value = "ID do usuário", example = "1", required = true)
 					Long usuarioId);
 
-	@ApiOperation("Desassociacao de grupo com usuario")
+	@ApiOperation("Desassociação de grupo com usuário")
 	@ApiResponses({
-			@ApiResponse(code = 204, message = "Desassociacao realizada com sucesso"),
-			@ApiResponse(code = 404, message = "Usuario ou grupo nao encontrado",
+			@ApiResponse(code = 204, message = "Desassociação realizada com sucesso"),
+			@ApiResponse(code = 404, message = "Usuário ou grupo não encontrado",
 					response = Problem.class)
 	})
 	void desassociar(
-			@ApiParam(value = "ID do usuario", example = "1", required = true)
+			@ApiParam(value = "ID do usuário", example = "1", required = true)
 					Long usuarioId,
 
 			@ApiParam(value = "ID do grupo", example = "1", required = true)
 					Long grupoId);
 
-	@ApiOperation("Associacao de grupo com usuario")
+	@ApiOperation("Associação de grupo com usuário")
 	@ApiResponses({
-			@ApiResponse(code = 204, message = "Associacao realizada com sucesso"),
-			@ApiResponse(code = 404, message = "Usuario ou grupo nao encontrado",
+			@ApiResponse(code = 204, message = "Associação realizada com sucesso"),
+			@ApiResponse(code = 404, message = "Usuário ou grupo não encontrado",
 					response = Problem.class)
 	})
 	void associar(
-			@ApiParam(value = "ID do usuario", example = "1", required = true)
+			@ApiParam(value = "ID do usuário", example = "1", required = true)
 					Long usuarioId,
 
 			@ApiParam(value = "ID do grupo", example = "1", required = true)

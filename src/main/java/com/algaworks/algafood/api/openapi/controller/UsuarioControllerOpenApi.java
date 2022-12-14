@@ -13,52 +13,52 @@ import io.swagger.annotations.ApiResponses;
 
 import java.util.List;
 
-@Api(tags = "Usuarios")
+@Api(tags = "Usuários")
 public interface UsuarioControllerOpenApi {
 
-	@ApiOperation("Lista os usuarios")
+	@ApiOperation("Lista os usuários")
 	List<UsuarioModel> listar();
 
-	@ApiOperation("Busca um usuario por ID")
+	@ApiOperation("Busca um usuário por ID")
 	@ApiResponses({
-			@ApiResponse(code = 400, message = "ID do usuario invalido", response = Problem.class),
-			@ApiResponse(code = 404, message = "Usuario nao encontrado", response = Problem.class)
+			@ApiResponse(code = 400, message = "ID do usuário inválido", response = Problem.class),
+			@ApiResponse(code = 404, message = "Usuário não encontrado", response = Problem.class)
 	})
 	UsuarioModel buscar(
-			@ApiParam(value = "ID do usuario", example = "1", required = true)
+			@ApiParam(value = "ID do usuário", example = "1", required = true)
 					Long usuarioId);
 
-	@ApiOperation("Cadastra um usuario")
+	@ApiOperation("Cadastra um usuário")
 	@ApiResponses({
-			@ApiResponse(code = 201, message = "Usuario cadastrado"),
+			@ApiResponse(code = 201, message = "Usuário cadastrado"),
 	})
 	UsuarioModel adicionar(
-			@ApiParam(name = "corpo", value = "Representacao de um novo usuario", required = true)
+			@ApiParam(name = "corpo", value = "Representação de um novo usuário", required = true)
 					UsuarioComSenhaInput usuarioInput);
 
-	@ApiOperation("Atualiza um usuario por ID")
+	@ApiOperation("Atualiza um usuário por ID")
 	@ApiResponses({
-			@ApiResponse(code = 200, message = "Usuario atualizado"),
-			@ApiResponse(code = 404, message = "Usuario nao encontrado", response = Problem.class)
+			@ApiResponse(code = 200, message = "Usuário atualizado"),
+			@ApiResponse(code = 404, message = "Usuário não encontrado", response = Problem.class)
 	})
 	UsuarioModel atualizar(
-			@ApiParam(value = "ID do usuario", example = "1", required = true)
+			@ApiParam(value = "ID do usuário", example = "1", required = true)
 					Long usuarioId,
 
-			@ApiParam(name = "corpo", value = "Representacao de um usuario com os novos dados",
+			@ApiParam(name = "corpo", value = "Representação de um usuário com os novos dados",
 					required = true)
 					UsuarioInput usuarioInput);
 
-	@ApiOperation("Atualiza a senha de um usuario")
+	@ApiOperation("Atualiza a senha de um usuário")
 	@ApiResponses({
 			@ApiResponse(code = 204, message = "Senha alterada com sucesso"),
-			@ApiResponse(code = 404, message = "Usuario nao encontrado", response = Problem.class)
+			@ApiResponse(code = 404, message = "Usuário não encontrado", response = Problem.class)
 	})
 	void alterarSenha(
-			@ApiParam(value = "ID do usuario", example = "1", required = true)
+			@ApiParam(value = "ID do usuário", example = "1", required = true)
 					Long usuarioId,
 
-			@ApiParam(name = "corpo", value = "Representacao de uma nova senha",
+			@ApiParam(name = "corpo", value = "Representação de uma nova senha",
 					required = true)
 					SenhaInput senha);
 

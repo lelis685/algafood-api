@@ -10,8 +10,8 @@ public class GrupoModel {
 
 	@ApiModelProperty(example = "1")
 	private Long id;
-	
+
 	@ApiModelProperty(example = "Gerente")
 	private String nome;
-	
+
 }
