@@ -11,7 +11,7 @@ public class FormaPagamentoModel {
 	@ApiModelProperty(example = "1")
 	private Long id;
 	
-	@ApiModelProperty(example = "Cartão de crédito")
+	@ApiModelProperty(example = "Cartao de credito")
 	private String descricao;
 	
 }

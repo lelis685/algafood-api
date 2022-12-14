@@ -11,7 +11,7 @@ public class UsuarioModel {
 	@ApiModelProperty(example = "1")
 	private Long id;
 	
-	@ApiModelProperty(example = "João da Silva")
+	@ApiModelProperty(example = "Joao da Silva")
 	private String nome;
 	
 	@ApiModelProperty(example = "joao.ger@algafood.com.br")

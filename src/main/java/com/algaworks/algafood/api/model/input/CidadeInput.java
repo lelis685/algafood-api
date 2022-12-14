@@ -12,7 +12,7 @@ import lombok.Setter;
 @Getter
 public class CidadeInput {
 
-	@ApiModelProperty(example = "Uberlândia", required = true)
+	@ApiModelProperty(example = "Uberlandia", required = true)
 	@NotBlank
 	private String nome;
 	

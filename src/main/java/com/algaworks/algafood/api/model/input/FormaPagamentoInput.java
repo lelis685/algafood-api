@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 public class FormaPagamentoInput {
 
-	@ApiModelProperty(example = "Cartão de crédito", required = true)
+	@ApiModelProperty(example = "Cartao de credito", required = true)
 	@NotBlank
 	private String descricao;
 	

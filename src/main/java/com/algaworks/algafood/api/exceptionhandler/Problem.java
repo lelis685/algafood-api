@@ -26,14 +26,14 @@ public class Problem {
     @ApiModelProperty(example = "https://algafood.com.br/dados-invalidos", position = 10)
     private String type;
 
-    @ApiModelProperty(example = "Dados inválidos", position = 15)
+    @ApiModelProperty(example = "Dados invalidos", position = 15)
     private String title;
 
-    @ApiModelProperty(example = "Um ou mais campos estão inválidos. Faça o preenchimento correto e tente novamente.",
+    @ApiModelProperty(example = "Um ou mais campos estao invalidos. Faca o preenchimento correto e tente novamente.",
             position = 20)
     private String detail;
 
-    @ApiModelProperty(example = "Um ou mais campos estão inválidos. Faça o preenchimento correto e tente novamente.",
+    @ApiModelProperty(example = "Um ou mais campos estao invalidos. Faca o preenchimento correto e tente novamente.",
             position = 25)
     private String userMessage;
 
@@ -49,7 +49,7 @@ public class Problem {
         @ApiModelProperty(example = "preco")
         private String name;
 
-        @ApiModelProperty(example = "O preço é obrigatório")
+        @ApiModelProperty(example = "O preço e obrigatorio")
         private String userMessage;
 
     }
