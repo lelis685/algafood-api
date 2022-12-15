@@ -17,9 +17,6 @@ public interface RestauranteControllerOpenApi {
 	})
 	List<RestauranteModel> listar();
 
-	@ApiOperation(value = "Lista restaurantes", hidden = true)
-	List<RestauranteModel> listarApenasNomes();
-
 	@ApiOperation("Busca um restaurante por ID")
 	@ApiResponses({
 			@ApiResponse(code = 400, message = "ID do restaurante inválido", response = Problem.class),
