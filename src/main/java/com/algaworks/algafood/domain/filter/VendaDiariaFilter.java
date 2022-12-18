@@ -1,11 +1,14 @@
 package com.algaworks.algafood.domain.filter;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.OffsetDateTime;
 
+
+@AllArgsConstructor
 @Setter
 @Getter
 public class VendaDiariaFilter {
