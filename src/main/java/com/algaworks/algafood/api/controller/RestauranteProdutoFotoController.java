@@ -56,6 +56,8 @@ public class RestauranteProdutoFotoController implements RestauranteProdutoFotoC
 	                                      @RequestPart(required = true) MultipartFile arquivo) throws IOException {
 		Produto produto = cadastroProduto.buscarOuFalhar(restauranteId, produtoId);
 
+//		MultipartFile arquivo = fotoProdutoInput.getArquivo();
+
 		FotoProduto foto = new FotoProduto();
 		foto.setProduto(produto);
 		foto.setDescricao(fotoProdutoInput.getDescricao());

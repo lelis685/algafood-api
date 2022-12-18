@@ -1,11 +1,5 @@
 package com.algaworks.algafood.api.controller;
 
-import com.algaworks.algafood.api.AlgaLinks;
-import com.algaworks.algafood.api.assembler.PermissaoModelAssembler;
-import com.algaworks.algafood.api.model.PermissaoModel;
-import com.algaworks.algafood.api.openapi.controller.GrupoPermissaoControllerOpenApi;
-import com.algaworks.algafood.domain.model.Grupo;
-import com.algaworks.algafood.domain.service.CadastroGrupoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpStatus;
@@ -19,7 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.algaworks.algafood.api.AlgaLinks;
+import com.algaworks.algafood.api.assembler.PermissaoModelAssembler;
+import com.algaworks.algafood.api.model.PermissaoModel;
+import com.algaworks.algafood.api.openapi.controller.GrupoPermissaoControllerOpenApi;
+import com.algaworks.algafood.domain.model.Grupo;
+import com.algaworks.algafood.domain.service.CadastroGrupoService;
 
 @RestController
 @RequestMapping(path = "/grupos/{grupoId}/permissoes")
@@ -27,7 +26,7 @@ public class GrupoPermissaoController implements GrupoPermissaoControllerOpenApi
 
 	@Autowired
 	private CadastroGrupoService cadastroGrupo;
-	
+
 	@Autowired
 	private PermissaoModelAssembler permissaoModelAssembler;
 
@@ -35,7 +34,7 @@ public class GrupoPermissaoController implements GrupoPermissaoControllerOpenApi
 	private AlgaLinks algaLinks;
 
 	@Override
-	@GetMapping
+	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	public CollectionModel<PermissaoModel> listar(@PathVariable Long grupoId) {
 		Grupo grupo = cadastroGrupo.buscarOuFalhar(grupoId);
 

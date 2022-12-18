@@ -8,7 +8,7 @@ import com.algaworks.algafood.domain.model.dto.VendaDiaria;
 import com.algaworks.algafood.domain.service.VendaQueryService;
 import com.algaworks.algafood.domain.service.VendaReportService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.RepresentationModel;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -36,6 +36,7 @@ public class EstatisticasController implements EstatisticasControllerOpenApi {
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	public EstatisticasModel estatisticas() {
 		var estatisticasModel = new EstatisticasModel();
+
 		estatisticasModel.add(algaLinks.linkToEstatisticasVendasDiarias("vendas-diarias"));
 
 		return estatisticasModel;
@@ -63,5 +64,6 @@ public class EstatisticasController implements EstatisticasControllerOpenApi {
 				.headers(headers)
 				.body(bytesPdf);
 	}
+
 
 }

@@ -51,9 +51,9 @@ public class RestauranteProdutoController implements RestauranteProdutoControlle
 	private AlgaLinks algaLinks;
 
 	@Override
-	@GetMapping
+	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	public CollectionModel<ProdutoModel> listar(@PathVariable Long restauranteId,
-												@RequestParam(required = false, defaultValue = "false") Boolean incluirInativos) {
+	                                            @RequestParam(required = false, defaultValue = "false") Boolean incluirInativos) {
 		Restaurante restaurante = cadastroRestaurante.buscarOuFalhar(restauranteId);
 
 		List<Produto> todosProdutos = null;
@@ -67,38 +67,41 @@ public class RestauranteProdutoController implements RestauranteProdutoControlle
 		return produtoModelAssembler.toCollectionModel(todosProdutos)
 				.add(algaLinks.linkToProdutos(restauranteId));
 	}
-	
-	@GetMapping(value = "/{produtoId}", produces = MediaType.APPLICATION_JSON_VALUE)
+
+	@Override
+	@GetMapping("/{produtoId}")
 	public ProdutoModel buscar(@PathVariable Long restauranteId, @PathVariable Long produtoId) {
 		Produto produto = cadastroProduto.buscarOuFalhar(restauranteId, produtoId);
-		
+
 		return produtoModelAssembler.toModel(produto);
 	}
-	
-	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+
+	@Override
+	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public ProdutoModel adicionar(@PathVariable Long restauranteId,
-			@RequestBody @Valid ProdutoInput produtoInput) {
+	                              @RequestBody @Valid ProdutoInput produtoInput) {
 		Restaurante restaurante = cadastroRestaurante.buscarOuFalhar(restauranteId);
-		
+
 		Produto produto = produtoInputDisassembler.toDomainObject(produtoInput);
 		produto.setRestaurante(restaurante);
-		
+
 		produto = cadastroProduto.salvar(produto);
-		
+
 		return produtoModelAssembler.toModel(produto);
 	}
-	
-	@PutMapping(value = "/{produtoId}", produces = MediaType.APPLICATION_JSON_VALUE)
+
+	@Override
+	@PutMapping("/{produtoId}")
 	public ProdutoModel atualizar(@PathVariable Long restauranteId, @PathVariable Long produtoId,
-			@RequestBody @Valid ProdutoInput produtoInput) {
+	                              @RequestBody @Valid ProdutoInput produtoInput) {
 		Produto produtoAtual = cadastroProduto.buscarOuFalhar(restauranteId, produtoId);
-		
+
 		produtoInputDisassembler.copyToDomainObject(produtoInput, produtoAtual);
-		
+
 		produtoAtual = cadastroProduto.salvar(produtoAtual);
-		
+
 		return produtoModelAssembler.toModel(produtoAtual);
 	}
-	
+
 }
