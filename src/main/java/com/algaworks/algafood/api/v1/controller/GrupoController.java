@@ -26,7 +26,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/grupos")
+@RequestMapping(path = "/v1/grupos")
 public class GrupoController implements GrupoControllerOpenApi {
 
 	@Autowired
