@@ -86,11 +86,11 @@ public class CidadeControllerV2 {
 			throw new NegocioException(e.getMessage(), e);
 		}
 	}
-
-	@DeleteMapping(path = "/{cidadeId}", produces = AlgaMediaTypes.V2_APPLICATION_JSON_VALUE)
-	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void remover(@PathVariable Long cidadeId) {
-		cadastroCidade.excluir(cidadeId);
-	}
+//
+//	@DeleteMapping(path = "/{cidadeId}", produces = AlgaMediaTypes.V2_APPLICATION_JSON_VALUE)
+//	@ResponseStatus(HttpStatus.NO_CONTENT)
+//	public void remover(@PathVariable Long cidadeId) {
+//		cadastroCidade.excluir(cidadeId);
+//	}
 
 }
