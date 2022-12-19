@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f19f5508-39c8-46bd-91c9-8815635b1b26",
+		"_postman_id": "14bf2fbd-709e-4de1-b660-b38bbd5867ec",
 		"name": "AlgaFood API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "3744572"
@@ -37,11 +37,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}/cozinhas",
+							"raw": "{{host}}/v1/cozinhas",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"cozinhas"
 							],
 							"query": [
@@ -89,11 +90,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/cozinhas/2",
+							"raw": "{{host}}/v1/cozinhas/2",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"cozinhas",
 								"2"
 							]
@@ -129,11 +131,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/cozinhas",
+							"raw": "{{host}}/v1/cozinhas",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"cozinhas"
 							]
 						}
@@ -168,11 +171,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/cozinhas/1",
+							"raw": "{{host}}/v1/cozinhas/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"cozinhas",
 								"1"
 							]
@@ -210,11 +214,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/cozinhas/1",
+							"raw": "{{host}}/v1/cozinhas/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"cozinhas",
 								"1"
 							]
@@ -258,11 +263,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{host}}/restaurantes/1/produtos",
+									"raw": "{{host}}/v1/restaurantes/1/produtos",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
+										"v1",
 										"restaurantes",
 										"1",
 										"produtos"
@@ -306,11 +312,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{host}}/restaurantes/1/produtos/1",
+									"raw": "{{host}}/v1/restaurantes/1/produtos/1",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
+										"v1",
 										"restaurantes",
 										"1",
 										"produtos",
@@ -357,11 +364,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{host}}/restaurantes/1/produtos",
+									"raw": "{{host}}/v1/restaurantes/1/produtos",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
+										"v1",
 										"restaurantes",
 										"1",
 										"produtos"
@@ -407,11 +415,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{host}}/restaurantes/1/produtos/1",
+									"raw": "{{host}}/v1/restaurantes/1/produtos/1",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
+										"v1",
 										"restaurantes",
 										"1",
 										"produtos",
@@ -454,11 +463,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{host}}/restaurantes/1/formas-pagamento",
+									"raw": "{{host}}/v1/restaurantes/1/formas-pagamento",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
+										"v1",
 										"restaurantes",
 										"1",
 										"formas-pagamento"
@@ -495,11 +505,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{host}}/restaurantes/1/formas-pagamento/1",
+									"raw": "{{host}}/v1/restaurantes/1/formas-pagamento/1",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
+										"v1",
 										"restaurantes",
 										"1",
 										"formas-pagamento",
@@ -537,11 +548,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{host}}/restaurantes/1/formas-pagamento/1",
+									"raw": "{{host}}/v1/restaurantes/1/formas-pagamento/1",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
+										"v1",
 										"restaurantes",
 										"1",
 										"formas-pagamento",
@@ -584,11 +596,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{host}}/restaurantes/1/responsaveis",
+									"raw": "{{host}}/v1/restaurantes/1/responsaveis",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
+										"v1",
 										"restaurantes",
 										"1",
 										"responsaveis"
@@ -625,11 +638,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{host}}/restaurantes/1/responsaveis/5",
+									"raw": "{{host}}/v1/restaurantes/1/responsaveis/5",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
+										"v1",
 										"restaurantes",
 										"1",
 										"responsaveis",
@@ -667,11 +681,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{host}}/restaurantes/1/responsaveis/1",
+									"raw": "{{host}}/v1/restaurantes/1/responsaveis/1",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
+										"v1",
 										"restaurantes",
 										"1",
 										"responsaveis",
@@ -711,11 +726,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}/restaurantes",
+							"raw": "{{host}}/v1/restaurantes",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"restaurantes"
 							]
 						}
@@ -759,11 +775,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/restaurantes/ativacoes",
+							"raw": "{{host}}/v1/restaurantes/ativacoes",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"restaurantes",
 								"ativacoes"
 							]
@@ -808,11 +825,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/restaurantes/ativacoes",
+							"raw": "{{host}}/v1/restaurantes/ativacoes",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"restaurantes",
 								"ativacoes"
 							]
@@ -848,11 +866,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}/restaurantes/1/ativo",
+							"raw": "{{host}}/v1/restaurantes/1/ativo",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"restaurantes",
 								"1",
 								"ativo"
@@ -889,11 +908,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}/restaurantes/1/ativo",
+							"raw": "{{host}}/v1/restaurantes/1/ativo",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"restaurantes",
 								"1",
 								"ativo"
@@ -909,9 +929,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"  pm.response.to.have.status(200);\r",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -930,18 +948,20 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}/restaurantes/frete-gratis?nome=a",
+							"raw": "{{host}}/v1/restaurantes/frete-gratis",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"restaurantes",
 								"frete-gratis"
 							],
 							"query": [
 								{
 									"key": "nome",
-									"value": "a"
+									"value": "a",
+									"disabled": true
 								}
 							]
 						}
@@ -955,9 +975,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"  pm.response.to.have.status(200);\r",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -976,11 +994,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}/restaurantes/primeiro",
+							"raw": "{{host}}/v1/restaurantes/primeiro",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"restaurantes",
 								"primeiro"
 							]
@@ -1007,11 +1026,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/restaurantes/1",
+							"raw": "{{host}}/v1/restaurantes/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"restaurantes",
 								"1"
 							]
@@ -1038,11 +1058,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/restaurantes/1/abertura",
+							"raw": "{{host}}/v1/restaurantes/1/abertura",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"restaurantes",
 								"1",
 								"abertura"
@@ -1070,11 +1091,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/restaurantes/1/fechamento",
+							"raw": "{{host}}/v1/restaurantes/1/fechamento",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"restaurantes",
 								"1",
 								"fechamento"
@@ -1111,11 +1133,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/restaurantes",
+							"raw": "{{host}}/v1/restaurantes",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"restaurantes"
 							]
 						}
@@ -1150,11 +1173,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/restaurantes/1",
+							"raw": "{{host}}/v1/restaurantes/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"restaurantes",
 								"1"
 							]
@@ -1195,11 +1219,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}/estados",
+							"raw": "{{host}}/v1/estados",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"estados"
 							]
 						}
@@ -1225,11 +1250,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/estados/2",
+							"raw": "{{host}}/v1/estados/2",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"estados",
 								"2"
 							]
@@ -1265,11 +1291,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/estados",
+							"raw": "{{host}}/v1/estados",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"estados"
 							]
 						}
@@ -1291,11 +1318,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/estados/1",
+							"raw": "{{host}}/v1/estados/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"estados",
 								"1"
 							]
@@ -1322,11 +1350,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/estados/1",
+							"raw": "{{host}}/v1/estados/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"estados",
 								"1"
 							]
@@ -1361,11 +1390,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{host}}/grupos/1/permissoes",
+									"raw": "{{host}}/v1/grupos/1/permissoes",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
+										"v1",
 										"grupos",
 										"1",
 										"permissoes"
@@ -1393,11 +1423,12 @@
 								"method": "PUT",
 								"header": [],
 								"url": {
-									"raw": "{{host}}/grupos/1/permissoes/1",
+									"raw": "{{host}}/v1/grupos/1/permissoes/1",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
+										"v1",
 										"grupos",
 										"1",
 										"permissoes",
@@ -1426,11 +1457,12 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{host}}/grupos/1/permissoes/1",
+									"raw": "{{host}}/v1/grupos/1/permissoes/1",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
+										"v1",
 										"grupos",
 										"1",
 										"permissoes",
@@ -1470,11 +1502,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}/grupos",
+							"raw": "{{host}}/v1/grupos",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"grupos"
 							]
 						}
@@ -1500,11 +1533,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/grupos/2",
+							"raw": "{{host}}/v1/grupos/2",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"grupos",
 								"2"
 							]
@@ -1540,11 +1574,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/grupos",
+							"raw": "{{host}}/v1/grupos",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"grupos"
 							]
 						}
@@ -1566,11 +1601,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/grupos/1",
+							"raw": "{{host}}/v1/grupos/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"grupos",
 								"1"
 							]
@@ -1597,11 +1633,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/grupos/1",
+							"raw": "{{host}}/v1/grupos/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"grupos",
 								"1"
 							]
@@ -1636,11 +1673,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{host}}/usuarios/2/grupos",
+									"raw": "{{host}}/v1/usuarios/2/grupos",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
+										"v1",
 										"usuarios",
 										"2",
 										"grupos"
@@ -1668,11 +1706,12 @@
 								"method": "PUT",
 								"header": [],
 								"url": {
-									"raw": "{{host}}/usuarios/2/grupos/1",
+									"raw": "{{host}}/v1/usuarios/2/grupos/1",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
+										"v1",
 										"usuarios",
 										"2",
 										"grupos",
@@ -1701,11 +1740,12 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{host}}/usuarios/2/grupos/1",
+									"raw": "{{host}}/v1/usuarios/2/grupos/1",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
+										"v1",
 										"usuarios",
 										"2",
 										"grupos",
@@ -1745,11 +1785,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}/usuarios",
+							"raw": "{{host}}/v1/usuarios",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"usuarios"
 							]
 						}
@@ -1775,11 +1816,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/usuarios/2",
+							"raw": "{{host}}/v1/usuarios/2",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"usuarios",
 								"2"
 							]
@@ -1815,11 +1857,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/usuarios",
+							"raw": "{{host}}/v1/usuarios",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"usuarios"
 							]
 						}
@@ -1841,11 +1884,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/usuarios/1",
+							"raw": "{{host}}/v1/usuarios/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"usuarios",
 								"1"
 							]
@@ -1881,11 +1925,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/usuarios/6/senha",
+							"raw": "{{host}}/v1/usuarios/6/senha",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"usuarios",
 								"6",
 								"senha"
@@ -1922,16 +1967,17 @@
 						"header": [
 							{
 								"key": "Accept",
-								"value": "application/json",
+								"value": "application/vnd.algafood.v1+json",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "{{host}}/cidades",
+							"raw": "{{host}}/v1/cidades",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"cidades"
 							]
 						}
@@ -1955,13 +2001,25 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.algafood.v2+json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.algafood.v1+json",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "{{host}}/cidades/1",
+							"raw": "{{host}}/v1/cidades/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"cidades",
 								"1"
 							]
@@ -1986,7 +2044,13 @@
 					],
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.algafood.v1+json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n    \"nome\": \"Brasileira Batata\",\r\n    \"estado\": {\r\n        \"id\": 1\r\n    }\r\n}",
@@ -1997,11 +2061,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/cidades",
+							"raw": "{{host}}/v1/cidades",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"cidades"
 							]
 						}
@@ -2031,6 +2096,11 @@
 								"value": "application/pdf",
 								"type": "text",
 								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.algafood.v1+json",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -2043,11 +2113,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/cidades/1",
+							"raw": "{{host}}/v1/cidades/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"cidades",
 								"1"
 							]
@@ -2072,13 +2143,20 @@
 					],
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.algafood.v1+json",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "{{host}}/cidades/1",
+							"raw": "{{host}}/v1/cidades/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"cidades",
 								"1"
 							]
@@ -2119,11 +2197,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}/formas-pagamento",
+							"raw": "{{host}}/v1/formas-pagamento",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"formas-pagamento"
 							],
 							"query": [
@@ -2156,11 +2235,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/formas-pagamento/2",
+							"raw": "{{host}}/v1/formas-pagamento/2",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"formas-pagamento",
 								"2"
 							]
@@ -2196,11 +2276,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/formas-pagamento",
+							"raw": "{{host}}/v1/formas-pagamento",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"formas-pagamento"
 							]
 						}
@@ -2235,11 +2316,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/formas-pagamento/1",
+							"raw": "{{host}}/v1/formas-pagamento/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"formas-pagamento",
 								"1"
 							]
@@ -2277,11 +2359,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/formas-pagamento/1",
+							"raw": "{{host}}/v1/formas-pagamento/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"formas-pagamento",
 								"1"
 							]
@@ -2313,11 +2396,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/pedidos/f9981ca4-5a5e-4da3-af04-933861df3e55",
+							"raw": "{{host}}/v1/pedidos/f9981ca4-5a5e-4da3-af04-933861df3e55",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"pedidos",
 								"f9981ca4-5a5e-4da3-af04-933861df3e55"
 							]
@@ -2344,11 +2428,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/pedidos/f9981ca4-5a5e-4da3-af04-933861df3e55/confirmacao",
+							"raw": "{{host}}/v1/pedidos/f9981ca4-5a5e-4da3-af04-933861df3e55/confirmacao",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"pedidos",
 								"f9981ca4-5a5e-4da3-af04-933861df3e55",
 								"confirmacao"
@@ -2376,11 +2461,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/pedidos/f9981ca4-5a5e-4da3-af04-933861df3e55/entrega",
+							"raw": "{{host}}/v1/pedidos/f9981ca4-5a5e-4da3-af04-933861df3e55/entrega",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"pedidos",
 								"f9981ca4-5a5e-4da3-af04-933861df3e55",
 								"entrega"
@@ -2408,11 +2494,12 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/pedidos/d178b637-a785-4768-a3cb-aa1ce5a8cdab/cancelamento",
+							"raw": "{{host}}/v1/pedidos/d178b637-a785-4768-a3cb-aa1ce5a8cdab/cancelamento",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"pedidos",
 								"d178b637-a785-4768-a3cb-aa1ce5a8cdab",
 								"cancelamento"
@@ -2449,11 +2536,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/pedidos",
+							"raw": "{{host}}/v1/pedidos",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"pedidos"
 							]
 						}
@@ -2488,21 +2576,24 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}/pedidos?clienteId=1&restauranteId=4&dataCriacaoFim=2022-09-30T10:00:00Z",
+							"raw": "{{host}}/v1/pedidos?sort=restaurante.nome",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"pedidos"
 							],
 							"query": [
 								{
 									"key": "clienteId",
-									"value": "1"
+									"value": "1",
+									"disabled": true
 								},
 								{
 									"key": "restauranteId",
-									"value": "4"
+									"value": "4",
+									"disabled": true
 								},
 								{
 									"key": "dataCriacaoInicio",
@@ -2511,7 +2602,22 @@
 								},
 								{
 									"key": "dataCriacaoFim",
-									"value": "2022-09-30T10:00:00Z"
+									"value": "2022-09-30T10:00:00Z",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "restaurante.nome"
 								}
 							]
 						}
@@ -2557,11 +2663,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}/estatisticas/vendas-diarias",
+							"raw": "{{host}}/v1/estatisticas/vendas-diarias",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"v1",
 								"estatisticas",
 								"vendas-diarias"
 							],
@@ -2593,7 +2700,85 @@
 								},
 								{
 									"key": "",
-									"value": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Estatisticas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/pdf,application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/v1/estatisticas",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"estatisticas"
+							],
+							"query": [
+								{
+									"key": "clienteId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "restauranteId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "dataCriacaoInicio",
+									"value": "2022-10-30T10:00:00Z",
+									"disabled": true
+								},
+								{
+									"key": "dataCriacaoFim",
+									"value": "2022-11-30T10:00:00Z",
+									"disabled": true
+								},
+								{
+									"key": "timeOffset",
+									"value": "-03:00",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
 									"disabled": true
 								}
 							]
@@ -2602,6 +2787,238 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Fotos de Produtos",
+			"item": [
+				{
+					"name": "Fotos Produtos - Salvar ou Atualizar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "descricao",
+									"value": "Prime ribe ao ponto",
+									"type": "text"
+								},
+								{
+									"key": "arquivo",
+									"type": "file",
+									"src": "/C:/Users/Lelis/Pictures/prime rib -png.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/v1/restaurantes/1/produtos/1/foto",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"restaurantes",
+								"1",
+								"produtos",
+								"1",
+								"foto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fotos Produtos - Buscar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "image/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "descricao",
+									"value": "Prime ribe ao ponto",
+									"type": "text"
+								},
+								{
+									"key": "arquivo",
+									"type": "file",
+									"src": "/C:/Users/Lelis/Pictures/prime rib.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/v1/restaurantes/1/produtos/1/foto",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"restaurantes",
+								"1",
+								"produtos",
+								"1",
+								"foto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fotos Produtos - Excluir",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"  pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "image/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "descricao",
+									"value": "Prime ribe ao ponto",
+									"type": "text"
+								},
+								{
+									"key": "arquivo",
+									"type": "file",
+									"src": "/C:/Users/Lelis/Pictures/prime rib.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/v1/restaurantes/1/produtos/1/foto",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"restaurantes",
+								"1",
+								"produtos",
+								"1",
+								"foto"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Documentacao",
+			"item": [
+				{
+					"name": "API DOCs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/v3/api-docs",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v3",
+								"api-docs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "swagger ui",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/v3/api-docs",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v3",
+								"api-docs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Root Entry Point",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/v1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
