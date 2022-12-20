@@ -214,7 +214,7 @@ public class SpringFoxConfig {
 
 	private ApiInfo apiInfoV1() {
 		return new ApiInfoBuilder()
-				.title("AlgaFood API")
+				.title("AlgaFood API (Depreciada)")
 				.description("API aberta para clientes e restaurantes")
 				.version("1")
 				.build();
